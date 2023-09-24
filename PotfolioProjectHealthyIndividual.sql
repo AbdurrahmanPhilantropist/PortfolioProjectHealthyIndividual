@@ -5,20 +5,20 @@ From "Absenteeism_at_work" a
 LEFT JOIN compensation b
 ON a.ID = b.ID
 LEFT JOIN "Reasons" r
-ON a.ID = r."Number"
+ON a.ID = r."Number";
 
 
 -- Find the healthiest employee
 select *
 from "Absenteeism_at_work"
 WHERE "Social drinker" = 0 AND "Social smoker" = 0 AND "Body mass index" < 25
-AND "Absenteeism time in hours" < (select avg("Absenteeism time in hours") FROM "Absenteeism_at_work")
+AND "Absenteeism time in hours" < (select avg("Absenteeism time in hours") FROM "Absenteeism_at_work") ;
 
 -- Compensation rate increases for non-smokers
 
 select count(*)
 from "Absenteeism_at_work"
-WHERE "Social smoker" = 0
+WHERE "Social smoker" = 0;
 
 -- Optimize Query
 select
@@ -43,5 +43,5 @@ From "Absenteeism_at_work" a
 LEFT JOIN compensation b
 ON a.ID = b.ID
 LEFT JOIN "Reasons" r
-ON a.ID = r."Number"
+ON a.ID = r."Number" ;
 
